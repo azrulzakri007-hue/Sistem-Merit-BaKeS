@@ -6,12 +6,37 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Sistem Merit Pengawas</h1>
+  <h1>Sistem Merit Pengawas — Versi Tingkatan</h1>
 
   <div class="card">
-    <h2>Daftar Pengawas</h2>
+    <h2>Import Senarai Pengawas (CSV)</h2>
+    <input type="file" id="csvFile" accept=".csv" />
+    <button onclick="importCSV()">Import</button>
+  </div>
+
+  <div class="card">
+    <h2>Tambah Pengawas Secara Manual</h2>
     <input id="nama" placeholder="Nama Pengawas" />
+    <select id="tingkatan">
+      <option value="F2">F2</option>
+      <option value="F3">F3</option>
+      <option value="F4">F4</option>
+      <option value="F5">F5</option>
+    </select>
     <button onclick="daftarPengawas()">Tambah</button>
+  </div>
+
+  <div class="card">
+    <h2>Kemaskini Merit</h2>
+    <input id="nilai" type="number" placeholder="Nilai (+/-)" />
+    <input id="sebab" placeholder="Sebab kemaskini merit" />
+    <select id="filter" onchange="render()">
+      <option value="ALL">Semua Tingkatan</option>
+      <option value="F2">F2</option>
+      <option value="F3">F3</option>
+      <option value="F4">F4</option>
+      <option value="F5">F5</option>
+    </select>
   </div>
 
   <div class="card">
@@ -19,13 +44,19 @@
     <table>
       <thead>
         <tr>
+          <th>Tingkatan</th>
           <th>Nama</th>
           <th>Merit</th>
-          <th>Tolak Merit</th>
+          <th>Tindakan</th>
         </tr>
       </thead>
       <tbody id="senarai"></tbody>
     </table>
+  </div>
+
+  <div class="card">
+    <h2>Log Transaksi</h2>
+    <ul id="log"></ul>
   </div>
 
   <script src="script.js"></script>
