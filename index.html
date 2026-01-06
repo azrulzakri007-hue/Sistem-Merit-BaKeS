@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sistem Merit Pengawas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Sistem Merit Pengawas</h1>
+
+  <div class="card">
+    <h2>Daftar Pengawas</h2>
+    <input id="nama" placeholder="Nama Pengawas" />
+    <button onclick="daftarPengawas()">Tambah</button>
+  </div>
+
+  <div class="card">
+    <h2>Senarai Pengawas</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nama</th>
+          <th>Merit</th>
+          <th>Tolak Merit</th>
+        </tr>
+      </thead>
+      <tbody id="senarai"></tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
